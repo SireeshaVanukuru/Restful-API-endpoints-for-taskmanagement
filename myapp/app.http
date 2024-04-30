@@ -1,0 +1,50 @@
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+  "username": "adam_richard",
+  "password_hash": "richard_567"
+}
+###
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username": "adam_richard",
+  "password_hash": "richard_567"
+}
+###
+
+POST http://localhost:3000/newtasks/
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkYW1fcmljaGFyZCIsImlhdCI6MTcxNDQ5MTIxNH0.FflAAE9RHyn9pNDCh741BKHB6F52PIQnwkyVgQ2Mf1A
+Content-Type: application/json
+
+{
+  "title": "Testing-phase",
+  "description": "Perform debugging and testing of code",
+  "status": "yet to be completed",
+  "assignee_id":3,
+  "created_at":"23-01-2020",
+  "updated_at":"22-12-2021"
+
+}
+###
+
+GET http://localhost:3000/tasks/
+###
+
+GET http://localhost:3000/tasks/3/
+###
+
+PUT http://localhost:3000/tasks/2/
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkYW1fcmljaGFyZCIsImlhdCI6MTcxNDQ5MTIxNH0.FflAAE9RHyn9pNDCh741BKHB6F52PIQnwkyVgQ2Mf1A
+Content-Type: application/json
+
+{
+"title": "Code-Check",
+  "description":"check code redundancy",
+  "status": "completed"
+}
+###
+
+DELETE http://localhost:3000/tasks/3/
